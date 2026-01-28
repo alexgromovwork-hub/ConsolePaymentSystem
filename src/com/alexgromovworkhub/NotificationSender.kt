@@ -7,3 +7,13 @@ abstract class NotificationSender {
     }
     protected abstract fun sendInternal(message: String)
 }
+class EmailSender: NotificationSender() {
+    override fun sendInternal(message: String) {
+        println("Sending \"$message\" on email")
+    }
+
+}
+class SmsSender: NotificationSender() {
+    override fun sendInternal(message: String) {
+        println("Sending \"$message\" via SMS")    }
+}
